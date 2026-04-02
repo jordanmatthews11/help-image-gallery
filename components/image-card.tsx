@@ -15,15 +15,15 @@ export function ImageCard({ image, onClick }: ImageCardProps) {
       onClick={onClick}
       className="group relative rounded-xl overflow-hidden bg-card border border-border/70 text-left shadow-sm shadow-stone-900/5 transition-all duration-300 hover:border-primary/35 hover:shadow-md hover:shadow-stone-900/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      <div className="aspect-[4/3] relative overflow-hidden">
+      <div className="aspect-[4/3] relative overflow-hidden bg-muted/50 ring-1 ring-inset ring-border/40">
         <Image
           src={image.image_url}
           alt={image.title}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-contain object-center p-1.5 transition-opacity duration-300 group-hover:opacity-95"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-stone-900/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       <div className="p-3 space-y-2">
         <h3 className="font-medium text-sm text-foreground line-clamp-1 group-hover:text-primary transition-colors">
