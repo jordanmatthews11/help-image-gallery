@@ -84,18 +84,18 @@ export function ImageDetailDialog({ image, open, onOpenChange, onDeleted }: Imag
 
   return (
     <Dialog open={open} onOpenChange={(v) => { onOpenChange(v); setConfirmDelete(false) }}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto border-border shadow-lg shadow-stone-900/10">
+      <DialogContent className="w-[calc(100vw-1rem)] max-w-[min(92vw,90rem)] max-h-[95vh] overflow-y-auto border-border p-4 sm:p-6 shadow-lg shadow-stone-900/10">
         <DialogHeader>
-          <DialogTitle className="text-lg font-semibold">{image.title}</DialogTitle>
+          <DialogTitle className="pr-8 text-xl font-semibold sm:text-2xl">{image.title}</DialogTitle>
         </DialogHeader>
 
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-muted ring-1 ring-border/60">
+        <div className="relative w-full min-h-[min(50vh,24rem)] h-[min(82vh,1400px)] rounded-xl overflow-hidden bg-muted ring-1 ring-border/60">
           <Image
             src={image.image_url}
             alt={image.title}
             fill
-            sizes="(max-width: 768px) 100vw, 700px"
-            className="object-contain"
+            sizes="(max-width: 768px) 92vw, min(92vw, 1400px)"
+            className="object-contain object-center p-2 sm:p-3"
           />
         </div>
 
